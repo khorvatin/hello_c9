@@ -30,5 +30,5 @@ app.get '/', (req,res) ->
 # Only listen on $ node app.js
 
 if !module.parent
-    app.listen process.env.C9_PORT
+    app.listen process.env.PORT==0 ? 1337 : process.env.PORT
     console.log "Express server listening on port %d", app.address().port
